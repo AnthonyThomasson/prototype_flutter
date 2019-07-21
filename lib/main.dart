@@ -10,8 +10,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context){
    
     return MaterialApp(
-      title: 'Navigation Basics',
-      home: SignUp(),
+      title: 'Prototype',
+      home: SignUp()
     );
   }
 }
