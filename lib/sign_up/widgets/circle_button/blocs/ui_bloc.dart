@@ -6,7 +6,6 @@ enum UiEvent { pressed,released }
 
 class UiBloc extends Bloc<UiEvent, UiState> {
 
-
   @override
   UiState get initialState => UiState.initial();
 

@@ -13,9 +13,10 @@ class SignUp extends StatelessWidget{
         padding: EdgeInsets.all(50.0),
         child: Center(
             child: CircleButton(
+              title: '',
               action: (tapDownDetails){
                 Navigator.push(context, SlideRightRoute(page: SignUp2()));
-              }
+              },
             )
           )
         ),

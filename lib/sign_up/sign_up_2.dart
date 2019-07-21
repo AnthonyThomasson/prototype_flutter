@@ -7,7 +7,7 @@ class SignUp2 extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: CustomColors.red(),
+        color: CustomColors.white(),
         padding: EdgeInsets.all(50.0),
         child: Center(
           child: Text('Page2')
