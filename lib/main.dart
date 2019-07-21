@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'sign_up/sign_up.dart';
 import 'utilities/utilities.dart';
 
@@ -8,12 +8,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context){
-    
-    Navigator.push(
-      context,
-      SlideRightRoute(page: SignUp()),
+   
+    return MaterialApp(
+      title: 'Navigation Basics',
+      home: SignUp(),
     );
-    
-    return SignUp();
   }
 }
