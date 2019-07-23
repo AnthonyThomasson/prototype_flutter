@@ -12,13 +12,26 @@ class SignUp extends StatelessWidget{
         color: CustomColors.red(),
         padding: EdgeInsets.all(50.0),
         child: Center(
-            child: CircleButton(
-              title: '',
-              action: (tapDownDetails){
-                Navigator.push(context, SlideRightRoute(page: SignUp2()));
-              },
-            )
-          )
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Container(
+                child: Text('(Loading UI)'),
+                padding: EdgeInsets.only(bottom: 300),
+                
+              ),
+              Container(
+                child: CircleButton(
+                  title: 'Sign in with Facebook',
+                  action: (tapDownDetails){
+                    Navigator.push(context, SlideRightRoute(page: SignUp2()));
+                  },
+                ),
+              ),
+            ],
+          ),
+        )
         ),
     );
   }

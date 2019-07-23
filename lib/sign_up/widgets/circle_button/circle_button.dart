@@ -5,9 +5,10 @@ import 'blocs/blocks.dart';
 typedef ActionCallback = void Function(TapDownDetails context);
 
 class CircleButton extends StatelessWidget{
+
   final String title;
   final ActionCallback action;
-  final UiBloc _uiBloc = UiBloc();
+  final CircleButtonBloc _circleButtonBloc = CircleButtonBloc();
 
   CircleButton({
     @required this.title,
@@ -20,14 +21,14 @@ class CircleButton extends StatelessWidget{
   Widget build(BuildContext context) {
 
       return BlocBuilder(
-        bloc: _uiBloc,
-        builder: (_, UiState state) {
+        bloc: _circleButtonBloc,
+        builder: (_, CircleButtonState state) {
           return GestureDetector(
             onTapDown:(context) {
-              _uiBloc.dispatch(UiEvent.pressed);
+              _circleButtonBloc.dispatch(CircleButtonEvent.pressed);
               action(context);
             },
-            onTapUp:(context) => _uiBloc.dispatch(UiEvent.released),
+            onTapUp:(context) => _circleButtonBloc.dispatch(CircleButtonEvent.released),
             child: Container(
               padding: state.padding,
               decoration: state.decoration,
