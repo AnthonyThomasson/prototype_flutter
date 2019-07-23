@@ -1,6 +1,3 @@
-import 'package:bloc/bloc.dart';
-
-
 class SignUpState{
 
   SignUpState._();
