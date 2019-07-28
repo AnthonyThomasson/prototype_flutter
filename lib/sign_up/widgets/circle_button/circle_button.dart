@@ -4,38 +4,63 @@ import 'blocs/blocks.dart';
 
 typedef ActionCallback = void Function(TapDownDetails context);
 
-class CircleButton extends StatelessWidget{
+class CircleButton extends StatefulWidget{
 
-  final String title;
+  final title;
   final ActionCallback action;
-  final CircleButtonBloc _circleButtonBloc = CircleButtonBloc();
 
   CircleButton({
     @required this.title,
     @required this.action,
-  }): 
+  }):
     assert(action != null),
     assert(title != null);
 
   @override
-  Widget build(BuildContext context) {
+  State<StatefulWidget> createState() => _CircleButtonState(
+    title: this.title, 
+    action: this.action
+  );
+}
 
-      return BlocBuilder(
-        bloc: _circleButtonBloc,
-        builder: (_, CircleButtonState state) {
-          return GestureDetector(
-            onTapDown:(context) {
-              _circleButtonBloc.dispatch(CircleButtonEvent.pressed);
-              action(context);
-            },
-            onTapUp:(context) => _circleButtonBloc.dispatch(CircleButtonEvent.released),
-            child: Container(
-              padding: state.padding,
-              decoration: state.decoration,
-              child: state.child,
-            )
-          );
-        },
-      );
+class _CircleButtonState extends State<CircleButton> {
+
+  CircleButtonBloc _circleButtonBloc;
+  final ActionCallback action;
+  
+  _CircleButtonState({
+    @required title,
+    @required this.action,
+  }):
+    assert(action != null),
+    assert(title != null){
+      _circleButtonBloc = CircleButtonBloc(title: title, action: this.action);
+    }
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder(
+      bloc: _circleButtonBloc,
+      builder: (_, CircleButtonState state) {
+        return GestureDetector(
+          onTapDown:(context) {
+            _circleButtonBloc.dispatch(CircleButtonEvent.pressed);
+            this.action(context);
+          },
+          onTapUp:(context) => _circleButtonBloc.dispatch(CircleButtonEvent.released),
+          child: Container(
+            padding: state.padding,
+            decoration: state.decoration,
+            child: state.child,
+          )
+        );
+      }
+    );
+  }
+
+  @override
+  void dispose() {
+    _circleButtonBloc.dispose();
+    super.dispose();
   }
 }

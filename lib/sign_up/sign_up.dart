@@ -19,7 +19,6 @@ class SignUp extends StatelessWidget{
               Container(
                 child: Text('(Loading UI)'),
                 padding: EdgeInsets.only(bottom: 300),
-                
               ),
               Container(
                 child: CircleButton(

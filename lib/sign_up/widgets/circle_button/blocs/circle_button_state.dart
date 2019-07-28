@@ -9,7 +9,7 @@ class CircleButtonState{
 
   CircleButtonState._();
 
-  factory CircleButtonState.initial(){
+  factory CircleButtonState.initial(title){
     return CircleButtonState._()
       ..decoration = BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(50.0)),
@@ -17,7 +17,7 @@ class CircleButtonState{
       )
       ..child = Directionality(
         textDirection: TextDirection.ltr,
-        child: Text('continue',
+        child: Text(title,
           style: TextStyle(
             fontSize: 20.0,
             color: CustomColors.white(),
@@ -30,7 +30,7 @@ class CircleButtonState{
       );
   }
 
-  factory CircleButtonState.pressed(){
+  factory CircleButtonState.pressed(title){
     return CircleButtonState._()
       ..decoration = BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(50.0)),
@@ -38,7 +38,7 @@ class CircleButtonState{
       )
       ..child = Directionality(
         textDirection: TextDirection.ltr,
-        child: Text('continue',
+        child: Text(title,
           style: TextStyle(
             fontSize: 20.0,
             color: CustomColors.white(),
