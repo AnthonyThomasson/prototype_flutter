@@ -41,13 +41,12 @@ class _CircleButtonState extends State<CircleButton> {
   Widget build(BuildContext context) {
     return BlocBuilder(
       bloc: _circleButtonBloc,
-      builder: (_, CircleButtonState state) {
+      builder: (_, CircleButtonUiState state) {
         return GestureDetector(
           onTapDown:(context) {
-            _circleButtonBloc.dispatch(CircleButtonEvent.pressed);
-            this.action(context);
+            _circleButtonBloc.dispatch(Pressed(this.action,context));
           },
-          onTapUp:(context) => _circleButtonBloc.dispatch(CircleButtonEvent.released),
+          onTapUp:(context) => _circleButtonBloc.dispatch(Released()),
           child: Container(
             padding: state.padding,
             decoration: state.decoration,
@@ -58,9 +57,9 @@ class _CircleButtonState extends State<CircleButton> {
     );
   }
 
-  @override
-  void dispose() {
-    _circleButtonBloc.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   _circleButtonBloc.dispose();
+  //   super.dispose();
+  // }
 }

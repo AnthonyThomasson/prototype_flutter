@@ -1,16 +1,16 @@
 import 'package:flutter/widgets.dart';
 import 'package:prototype/utilities/static/static.dart';
 
-class CircleButtonState{
+class CircleButtonUiState{
 
   BoxDecoration decoration;
   Widget child;
   EdgeInsets padding;
 
-  CircleButtonState._();
+  CircleButtonUiState._();
 
-  factory CircleButtonState.initial(title){
-    return CircleButtonState._()
+  factory CircleButtonUiState.initial(title){
+    return CircleButtonUiState._()
       ..decoration = BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(50.0)),
         border: new Border.all(color:CustomColors.white(),width:3),
@@ -30,8 +30,8 @@ class CircleButtonState{
       );
   }
 
-  factory CircleButtonState.pressed(title){
-    return CircleButtonState._()
+  factory CircleButtonUiState.pressed(title){
+    return CircleButtonUiState._()
       ..decoration = BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(50.0)),
         border: new Border.all(color:CustomColors.red(),width:3),
