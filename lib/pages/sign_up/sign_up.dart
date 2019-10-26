@@ -71,20 +71,74 @@ class SignUp extends StatelessWidget{
                 child: Row(children: <Widget>[
                   Expanded(
                     child: Container(
-                      child: Text('f',textAlign: TextAlign.center, style: TextStyle(fontSize: 60)),
-                      color: Colors.white
+                      margin: EdgeInsets.only(left: 10,right: 10),
+                      child: MaterialButton(
+                        padding: EdgeInsets.only(top: 20,bottom: 20),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(100),
+                          side: BorderSide(
+                            width: 1,
+                            color: Colors.white
+                          )
+                        ),
+                        child: Text('f',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      onPressed: () {},
+                      ),
                     ),
                   ),
                   Expanded(
                     child: Container(
-                      child: Text('t',textAlign: TextAlign.center, style: TextStyle(fontSize: 60)),
-                      color: Colors.white
+                      margin: EdgeInsets.only(left: 10,right: 10),
+                      child: MaterialButton(
+                        padding: EdgeInsets.only(top: 20,bottom: 20),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(100),
+                          side: BorderSide(
+                            width: 1,
+                            color: Colors.white
+                          )
+                        ),
+                        child: Text('G',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      onPressed: () {},
+                      ),
                     ),
                   ),
                   Expanded(
                     child: Container(
-                      child: Text('g',textAlign: TextAlign.center, style: TextStyle(fontSize: 60)),
-                      color: Colors.white
+                      margin: EdgeInsets.only(left: 10,right: 10),
+                      child: MaterialButton(
+                        padding: EdgeInsets.only(top: 20,bottom: 20),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(100),
+                          side: BorderSide(
+                            width: 1,
+                            color: Colors.white
+                          )
+                        ),
+                        child: Text('t',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      onPressed: () {},
+                      ),
                     ),
                   ),
                 ],),
