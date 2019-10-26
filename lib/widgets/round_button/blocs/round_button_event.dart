@@ -2,9 +2,9 @@ import 'package:flutter/widgets.dart';
 
 import 'blocks.dart';
 
-abstract class CircleButtonEvent {}
+abstract class RoundButtonEvent {}
 
-class Pressed extends CircleButtonEvent {
+class Pressed extends RoundButtonEvent {
   ActionCallback action;
   TapDownDetails context;
   Pressed(this.action,this.context);
@@ -13,4 +13,4 @@ class Pressed extends CircleButtonEvent {
     this.action(this.context);
   }
 }
-class Released extends CircleButtonEvent {}
+class Released extends RoundButtonEvent {}

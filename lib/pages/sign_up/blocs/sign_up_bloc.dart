@@ -3,7 +3,7 @@ import 'sign_up_state.dart';
 
 enum SignUpEvent { signInWithFacebook }
 
-class CircleButtonBloc extends Bloc<SignUpEvent, SignUpState> {
+class RoundButtonBloc extends Bloc<SignUpEvent, SignUpState> {
 
   @override
   SignUpState get initialState => SignUpState.initial();
