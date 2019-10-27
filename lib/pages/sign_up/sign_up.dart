@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:prototype/widgets/global_widgets.dart';
+import 'package:prototype/pages/sign_up/widgets/login_buttons.dart';
+import 'package:prototype/pages/sign_up/widgets/social_buttons.dart';
 import 'package:prototype/utilities/utilities.dart';
-import 'sign_up_2.dart';
 
 class SignUp extends StatelessWidget{
 
@@ -40,109 +40,9 @@ class SignUp extends StatelessWidget{
               ),
               Container(
                 margin: EdgeInsets.only(left: 50,right: 50),
-                child: RoundButtonSolid(
-                  title: 'Login',
-                  action: (tapDownDetails){
-                    Navigator.push(context, SlideRightRoute(page: SignUp2()));
-                  },
-                ),
+                child: LoginButtons(),
               ),
-              Container(
-                margin: EdgeInsets.only(top: 20,left: 50,right: 50),
-                child: RoundButton(
-                  title: 'Register',
-                  action: (tapDownDetails){
-                    Navigator.push(context, SlideRightRoute(page: SignUp2()));
-                  },
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.only(top: 40),
-                child: Text('Or Login with',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 15.0,
-                    color: CustomColors.white(),
-                  )
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(top: 20,left: 50,right: 50),
-                child: Row(children: <Widget>[
-                  Expanded(
-                    child: Container(
-                      margin: EdgeInsets.only(left: 10,right: 10),
-                      child: MaterialButton(
-                        padding: EdgeInsets.only(top: 20,bottom: 20),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(100),
-                          side: BorderSide(
-                            width: 1,
-                            color: Colors.white
-                          )
-                        ),
-                        child: Text('f',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      onPressed: () {},
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      margin: EdgeInsets.only(left: 10,right: 10),
-                      child: MaterialButton(
-                        padding: EdgeInsets.only(top: 20,bottom: 20),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(100),
-                          side: BorderSide(
-                            width: 1,
-                            color: Colors.white
-                          )
-                        ),
-                        child: Text('G',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      onPressed: () {},
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      margin: EdgeInsets.only(left: 10,right: 10),
-                      child: MaterialButton(
-                        padding: EdgeInsets.only(top: 20,bottom: 20),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(100),
-                          side: BorderSide(
-                            width: 1,
-                            color: Colors.white
-                          )
-                        ),
-                        child: Text('t',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      onPressed: () {},
-                      ),
-                    ),
-                  ),
-                ],),
-              )
+              SocialLoginButtons()
             ],
           ),
         )
